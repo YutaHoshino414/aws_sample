@@ -13,6 +13,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
+# Use ActiveStorage variant
+gem 'mini_magick', '~> 4.8'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'dotenv-rails' # 開発環境で環境変数を操作するのに必要
