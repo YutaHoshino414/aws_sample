@@ -24,6 +24,7 @@ gem 'mini_racer', platforms: :ruby # デプロイ時に必要
 # 'bundle exec cap production deploy:check'時にエラーが出たため、追記
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
+gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
