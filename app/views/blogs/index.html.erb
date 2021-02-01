@@ -30,13 +30,64 @@
 
 <div class="row">
   <div class="col-3">
-  <h4 class="my-4">カテゴリーで探す</h4>
-       <div class="list-group">
-         <a href="#" class="list-group-item">Category 1</a>
-         <a href="#" class="list-group-item">Category 2</a>
-         <a href="#" class="list-group-item">Category 3</a>
-       </div><br>
-    <%= link_to '新規投稿', new_blog_path, class:"btn btn-primary" %>
+    <h4 class="my-4">カテゴリーで探す</h4>
+    <div class="list-group">
+      <a href="#" class="list-group-item">Category 1</a>
+      <a href="#" class="list-group-item">Category 2</a>
+      <a href="#" class="list-group-item">Category 3</a>
+    </div><br>
+    <%= link_to '新規投稿', new_blog_path, class:"btn btn-primary" %><br><hr>
+       <div id="menu-tittle">カテゴリ検索</div>
+       <ul id="sample">
+        <% @parents.each do |parent| %>
+        <li>
+          <a><%= parent.name %></a>
+          <ul>
+            <h3><%= parent.name %></h3>
+            <li>
+              <% parent.children.each do |child| %>
+                <a><%= child.name %></a>
+              <ul class="big">
+                <h3><%= child.name %></h3>
+                <% child.children.each do |grandchild| %>
+                <li><a><%= grandchild.name %></a></li>
+                <% end %>
+              </ul>
+            </li>
+           <% end %>
+         </ul>
+         </li>
+       <% end %>
+         <li>
+           <a href="#">メインカテゴリー3</a>
+           <ul class="big">
+             <h3>メインカテゴリー3</h3>
+             <li><a href="#">サブメニュー3-1</a></li>
+             <li><a href="#">サブメニュー3-2</a></li>
+             <li><a href="#">サブメニュー3-3</a></li>
+             <li><a href="#">サブメニュー3-4</a></li>
+             <li><a href="#">サブメニュー3-5</a></li>
+             <li><a href="#">サブメニュー3-6</a></li>
+             <li><a href="#">サブメニュー3-7</a></li>
+             <li><a href="#">サブメニュー3-8</a></li>
+             <li><a href="#">サブメニュー3-9</a></li>
+             <li><a href="#">サブメニュー3-10</a></li>
+             <li><a href="#">サブメニュー3-11</a></li>
+             <li><a href="#">サブメニュー3-12</a></li>
+           </ul>
+         </li>
+       </ul><hr>
+     <% @parents.each do |parent| %>
+      <p><%= parent.name %></p>
+        <% parent.children.each do |child| %>
+          <li><%= child.name %></li>
+          <% child.children.each do |grandchild| %>
+            <p><%= grandchild.name %></p>
+            <% end %>
+        <% end %>
+     <% end %>
+     
+     <br><br><br><br><br><br><br><br><br><br><br><hr>
   </div>
   <div class="col-9">
     <h3>ブログ一覧</h3><br>

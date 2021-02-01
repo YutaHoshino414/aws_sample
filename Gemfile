@@ -28,6 +28,9 @@ gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 
   gem 'capistrano', '3.6.0' # capistranoのツール一式
   gem 'capistrano-bundler'
@@ -59,3 +62,5 @@ gem 'rails-i18n', '~> 5.1'
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views', '~> 1.0'
+#
+gem 'ancestry'
