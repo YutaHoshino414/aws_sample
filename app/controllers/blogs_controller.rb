@@ -5,8 +5,8 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
-    @parents = Category.all.limit(2)
-    
+    @parents = Category.all.limit(4)
+    # binding.pry
     @grandchilds = Category.where(ancestry: "1/3")
     @grandchilds2 = Category.where(ancestry: "2/4")
   end

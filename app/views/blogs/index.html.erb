@@ -76,17 +76,7 @@
              <li><a href="#">サブメニュー3-12</a></li>
            </ul>
          </li>
-       </ul><hr>
-     <% @parents.each do |parent| %>
-      <p><%= parent.name %></p>
-        <% parent.children.each do |child| %>
-          <li><%= child.name %></li>
-          <% child.children.each do |grandchild| %>
-            <p><%= grandchild.name %></p>
-            <% end %>
-        <% end %>
-     <% end %>
-     
+       </ul><hr> 
      <br><br><br><br><br><br><br><br><br><br><br><hr>
   </div>
   <div class="col-9">
