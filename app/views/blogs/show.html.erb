@@ -2,38 +2,52 @@
 <div style="margin-top:100px;">
 </div>
 <div class="row">
-  <div class="col-3 mt-10">
-  <%= link_to 'Edit', edit_blog_path(@blog),class:"btn btn-success" %> |
-  <%= link_to 'Back', blogs_path %>
+  <div class="col-2">
   </div>
-  <div class="col-4">
-    <% @blog.images.each do |image| %>
-      <%= image_tag image.variant(resize:'300x400') %>
-    <% end %>
-  </div>
-  <div class="col-5">
-    <table class="table w-50">
-      <tbody>
-          <tr>
-            <th>ブログ名</th>
-            <td><%= @blog.name %></td>
-          </tr>
-          <tr>
-            <th>ブログ内容</th>
-            <td><%= @blog.content %></td>
-          </tr>
-          <tr>
-            <th>投稿日</th>
-            <td><%= @blog.created_at.strftime('%Y-%m-%d') %></td>
-          </tr>
-      </tbody>
-    </table>
+  <div class="col-9">
+    <div class="jumbo">
+      <div class="row">
+       <% @blog.images.each do |image| %>
+         <%= image_tag image.variant(resize:'300x400') %>
+       <% end %>
+     
+       <table class="table w-50">
+         <tbody>
+             <tr>
+               <th>ブログ名</th>
+               <td><%= @blog.name %></td>
+             </tr>
+             <tr>
+               <th>ブログ内容</th>
+               <td><%= @blog.content %></td>
+             </tr>
+             <tr>
+               <th>投稿日<i class="far fa-clock"></i></th>
+               <td><%= @blog.created_at.strftime('%Y-%m-%d') %></td>
+             </tr>
+             <tr>
+               <th>投稿者</th>
+               <td>
+                 <%= link_to user_path(@blog.user_id) do %>
+                   <h6><%= @blog.user.email %></h6>
+                 <% end %>
+               </td>
+             </tr>
+             <tr><th><td></td></th></tr>
+         </tbody>
+       </table>
+      </div>
     </div>
+  </div>
+  <div class="col-1">
+  </div>
 </div><hr>
 
 <div class="row">
   <div class="col-3">
   <p id="notice"><%= notice %></p>
+  <%= link_to 'Edit', edit_blog_path(@blog),class:"btn btn-success" %> |
+  <%= link_to 'Back', blogs_path %>
   </div>
   <div class="col-9">
     <div id="comments_area">

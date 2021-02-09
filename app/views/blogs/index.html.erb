@@ -32,7 +32,7 @@
   <div class="col-3">
    
     <h4 class="my-4">探す</h4>
-      <div id="menu-tittle">カテゴリ検索</div>
+      <div id="menu-tittle"><i class="fas fa-list" style="color:orange;"></i>　カテゴリ検索</div>
        <ul id="sample">
         <% @parents.each do |parent| %>
         <li>
@@ -79,7 +79,7 @@
               
               <div class="card-footer">
                 <div>
-                <p class="card-text"><small><%= blog.content %></small></p>
+                <i class="far fa-clock"></i>
                   <small><%= blog.created_at.strftime('%Y/%m/%d') %>_by</small>
                   <small style="color:black;"><%= blog.user.email %></small>
                 </div>

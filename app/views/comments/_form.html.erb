@@ -12,10 +12,10 @@
 
   <div class="field w-75">
     <%= form.label :content %>
-    <%= form.text_area :content, class:"form-control" %>
+    <%= form.text_area :content,  placeholder: "コメントを投稿する...", class:"form-control" %>
     <div class="actions">
     <%= form.submit"コメント投稿", class:"btn btn-primary btn-block" %>
     </div>
-  </div>
+  </div><i class="far fa-comment-dots" style="font-size:30px;"></i><i class="far fa-comments" style="font-size:30px;"></i>
   
 <% end %>
