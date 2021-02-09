@@ -14,3 +14,23 @@
  *= require_self
  */
  @import "bootstrap";
+
+body{
+  background-color: rgb(249, 249, 249);
+}
+
+.header{
+  background-color: #fff;
+}
+
+.header h2{
+  text-align:center;
+  // display: inline-block;
+}
+
+.form_area{
+  background-color: #fff;
+  padding: 40px;
+  border: 1px solid;
+  border-color: #ddd;
+}

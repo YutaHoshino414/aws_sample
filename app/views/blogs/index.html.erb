@@ -30,14 +30,9 @@
 
 <div class="row">
   <div class="col-3">
-    <h4 class="my-4">カテゴリーで探す</h4>
-    <div class="list-group">
-      <a href="#" class="list-group-item">Category 1</a>
-      <a href="#" class="list-group-item">Category 2</a>
-      <a href="#" class="list-group-item">Category 3</a>
-    </div><br>
     <%= link_to '新規投稿', new_blog_path, class:"btn btn-primary" %><br><hr>
-       <div id="menu-tittle">カテゴリ検索</div>
+    <h4 class="my-4">探す</h4>
+      <div id="menu-tittle">カテゴリ検索</div>
        <ul id="sample">
         <% @parents.each do |parent| %>
         <li>
@@ -77,6 +72,11 @@
            </ul>
          </li>
        </ul><hr> 
+    <div class="list-group">
+      <a href="#" class="list-group-item">Category 1</a>
+      <a href="#" class="list-group-item">Category 2</a>
+      <a href="#" class="list-group-item">Category 3</a>
+    </div><br>
      <br><br><br><br><br><br><br><br><br><br><br><hr>
   </div>
   <div class="col-9">
