@@ -7,13 +7,15 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
     @parents = Category.all.where(ancestry: nil)
     #  binding.pry
-    @grandchilds = Category.where(ancestry: "1/3")
-    @grandchilds2 = Category.where(ancestry: "2/4")
+    # @grandchilds = Category.where(ancestry: "1/3")
+    # @grandchilds2 = Category.where(ancestry: "2/4")
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @comments = @blog.comments
+    @comment = @blog.comments.build
   end
 
   # GET /blogs/new

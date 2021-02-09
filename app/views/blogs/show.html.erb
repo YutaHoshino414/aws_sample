@@ -1,14 +1,17 @@
-<p id="notice"><%= notice %></p>
 
+<div style="margin-top:100px;">
+</div>
 <div class="row">
-  <div class="col-3">
+  <div class="col-3 mt-10">
+  <%= link_to 'Edit', edit_blog_path(@blog),class:"btn btn-success" %> |
+  <%= link_to 'Back', blogs_path %>
   </div>
-  <div class="col-3">
+  <div class="col-4">
     <% @blog.images.each do |image| %>
-      <%= image_tag image.variant(resize:'300x300') %>
+      <%= image_tag image.variant(resize:'300x400') %>
     <% end %>
   </div>
-  <div class="col-6">
+  <div class="col-5">
     <table class="table w-50">
       <tbody>
           <tr>
@@ -19,9 +22,24 @@
             <th>ブログ内容</th>
             <td><%= @blog.content %></td>
           </tr>
+          <tr>
+            <th>投稿日</th>
+            <td><%= @blog.created_at.strftime('%Y-%m-%d') %></td>
+          </tr>
       </tbody>
     </table>
     </div>
 </div><hr>
-<%= link_to 'Edit', edit_blog_path(@blog),class:"btn btn-success" %> |
-<%= link_to 'Back', blogs_path %>
+
+<div class="row">
+  <div class="col-3">
+  <p id="notice"><%= notice %></p>
+  </div>
+  <div class="col-9">
+    <div id="comments_area">
+      <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
+    </div>
+
+      <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
+  </div>
+</div><br><br><br><br><br><br><br><br><br><br>

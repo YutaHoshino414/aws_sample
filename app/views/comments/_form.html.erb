@@ -1,0 +1,21 @@
+<%= form_with(model: [blog, comment]) do |form| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h4>
+      <ul>
+      <% comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field w-75">
+    <%= form.label :content %>
+    <%= form.text_area :content, class:"form-control" %>
+    <div class="actions">
+    <%= form.submit"コメント投稿", class:"btn btn-primary btn-block" %>
+    </div>
+  </div>
+  
+<% end %>

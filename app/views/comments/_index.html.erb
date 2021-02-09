@@ -1,0 +1,14 @@
+<ul>
+  <% comments.each do |comment| %>
+    <% if comment.id.present? %>
+      <li>
+        <span><%= comment.content %></span><strong>　(<%= comment.user.email %>さん|<%= comment.created_at.strftime('%Y-%m-%d') %>)</strong>
+        <%= link_to edit_blog_comment_path(blog, comment), remote: true do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+        <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
+        
+      </li>
+    <% end %>
+  <% end %>
+</ul>

@@ -71,19 +71,20 @@
         <div class="col mb-3">
           <div class="card h-100 shadow">
             <% blog.images.each do |image| %>
-            <p class="card-img-top"><%= image_tag image.variant(resize:'200x200') %></p>
+              <%= link_to blog do %>
+              <p class="card-img-top"><%= image_tag image.variant(resize:'250x300') %></p>
+              <% end %>
             <% end %>
             <div class="card-body text-secondary">
-              <p class="card-text"><small><%= blog.content %></small></p>
+              
               <div class="card-footer">
                 <div>
+                <p class="card-text"><small><%= blog.content %></small></p>
                   <small><%= blog.created_at.strftime('%Y/%m/%d') %>_by</small>
                   <small style="color:black;"><%= blog.user.email %></small>
                 </div>
                 <i class="fas fa-heart unlike-btn"></i><span>　</span>
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small><br>
-                <%= link_to '詳細', blog, class:"btn btn-outline-primary btn-sm" %>
-                <%= link_to '編集', edit_blog_path(blog.id), class: "btn btn-outline-success btn-sm" %>
                 <%= link_to '削除', blog_path(blog.id), class: "btn btn-outline-danger btn-sm" , method: :delete, data: {confirm: "本当に削除していいですか？"} %>
               </div>
             </div>
