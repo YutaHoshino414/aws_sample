@@ -5,8 +5,8 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
-    @parents = Category.all.limit(4)
-    # binding.pry
+    @parents = Category.all.where(ancestry: nil)
+    #  binding.pry
     @grandchilds = Category.where(ancestry: "1/3")
     @grandchilds2 = Category.where(ancestry: "2/4")
   end
@@ -29,6 +29,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
 
     respond_to do |format|
       if @blog.save
