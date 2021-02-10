@@ -1,6 +1,4 @@
-
-<div style="margin-top:100px;">
-</div>
+<br>
 <div class="row">
   <div class="col-2">
   </div>
@@ -44,16 +42,18 @@
 </div><hr>
 
 <div class="row">
-  <div class="col-3">
+  <div class="col-2">
   <p id="notice"><%= notice %></p>
   <%= link_to 'Edit', edit_blog_path(@blog),class:"btn btn-success" %> |
   <%= link_to 'Back', blogs_path %>
   </div>
   <div class="col-9">
-    <div id="comments_area">
-      <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
+    <div class="jumbo">
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
+      </div>
+  
+        <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
     </div>
-
-      <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
   </div>
 </div><br><br><br><br><br><br><br><br><br><br>

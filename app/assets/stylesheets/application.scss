@@ -16,16 +16,25 @@
  @import "bootstrap";
 
 body{
-  background-color: rgb(249, 249, 249);
+  background-color: rgb(240, 240, 240);
 }
 
 .header{
-  background-color: #fff;
+  background-color:#fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16);
+  text-align : center
 }
 
-.header h2{
-  text-align:center;
+.icon{
+  width: 100px;
+  height: 60px;
   // display: inline-block;
+  margin-top: 5px;
+  margin-left: 20%;
+}
+
+.log_in {
+  float:right;
 }
 
 .form_area{
@@ -33,4 +42,56 @@ body{
   padding: 40px;
   border: 1px solid;
   border-color: #ddd;
+}
+
+/*上段メニュー*/
+.gnav {
+  display: flex;
+  height: 2rem;
+  margin: 0 auto;
+  width: 700px;
+  position: relative;
+  z-index: 100;
+}
+.gnav > li >a{/*親階層のみ幅を25%にする*/
+  border-bottom: 1px solid rgb(243, 152, 15);
+}
+
+/*全てのリスト・リンク共通*/
+.gnav li {
+  list-style: none;
+  position: relative;
+  width: 200px;
+}
+.gnav ul{
+padding-inline-start: 0;}
+.gnav li a {
+  background: #fff;
+  border-right: 1px solid #eee;
+  color:  #001b34;
+  display: block;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+/*子階層以降共通*/
+.gnav li li {
+  height: 0;
+  overflow: hidden;
+  // transition: .5s;
+}
+// .gnav li li a {
+   // border-top: 1px solid #eee;
+// }
+.gnav li:hover > ul > li {
+  height: 2rem;
+  overflow: visible;
+}
+.gnav li ul li ul {
+  left: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
