@@ -15,6 +15,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
+gem 'image_processing', '~> 1.2'
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'dotenv-rails' # 開発環境で環境変数を操作するのに必要
@@ -61,6 +63,6 @@ gem 'rails-i18n', '~> 5.1'
 # Bootstrap
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
-gem 'devise-bootstrap-views', '~> 1.0'
+# gem 'devise-bootstrap-views', '~> 1.0'
 #
 gem 'ancestry'

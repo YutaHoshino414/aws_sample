@@ -22,19 +22,22 @@ body{
 .header{
   background-color:#fff;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16);
-  text-align : center
+  // text-align : center
+  display: flex;
 }
 
 .icon{
   width: 100px;
-  height: 60px;
+  height: 70px;
   // display: inline-block;
-  margin-top: 5px;
-  margin-left: 20%;
+  margin: 5px;
+  margin-left: 8%;
+  margin-right: 5%;
 }
 
 .log_in {
   float:right;
+  // display: inline-block;
 }
 
 .form_area{
@@ -46,25 +49,30 @@ body{
 
 /*上段メニュー*/
 .gnav {
+  display: inline-block;
   display: flex;
   height: 2rem;
   margin: 0 auto;
-  width: 700px;
+  width: 750px;
   position: relative;
   z-index: 100;
+  cursor: pointer;
 }
 .gnav > li >a{/*親階層のみ幅を25%にする*/
-  border-bottom: 1px solid rgb(243, 152, 15);
+  border-bottom: 2px solid rgb(243, 152, 15);
+  font-weight: bold;
 }
 
 /*全てのリスト・リンク共通*/
 .gnav li {
   list-style: none;
   position: relative;
-  width: 200px;
+  width: 220px;
 }
 .gnav ul{
-padding-inline-start: 0;}
+  padding-inline-start: 0;
+}
+
 .gnav li a {
   background: #fff;
   border-right: 1px solid #eee;

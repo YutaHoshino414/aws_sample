@@ -3,7 +3,16 @@
 <div class="row">
   <div class="col-3">
     <%= render 'layouts/menu2' %>
-    <span>　　　</span><%= link_to '新規投稿', new_blog_path, class:"btn btn-outline-primary" %>
+    
+      <div class="new_blog">
+        <div class="submit">
+        <%= link_to new_blog_path do %>
+          <p>POST</p>
+        <i class="fas fa-camera"></i>
+        <% end %>
+        </div>
+      </div>
+
   </div>
 
   <div class="col-9"><br>
