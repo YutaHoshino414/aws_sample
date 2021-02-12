@@ -19,9 +19,16 @@
                <th>ブログ内容</th>
                <td><%= @blog.content %></td>
              </tr>
+             
              <tr>
-               <th>投稿日<i class="far fa-clock"></i></th>
-               <td><%= @blog.created_at.strftime('%Y-%m-%d') %></td>
+               <th>カテゴリー</th>
+               <td><%= @blog.category.parent.name %>>
+               <%= @blog.category.name %></td>
+             </tr>
+             <tr>
+               <th>お気に入り</th>
+               <td>
+               </td>
              </tr>
              <tr>
                <th>投稿者</th>
@@ -31,10 +38,20 @@
                  <% end %>
                </td>
              </tr>
+             <tr>
+               <th>投稿日<i class="far fa-clock"></i></th>
+               <td><%= @blog.created_at.strftime('%Y-%m-%d') %></td>
+             </tr>
+             
+             <tr>
+               <th>金額</th>
+               <td><%= @blog.price %>円（税込み）</td>
+             </tr>
              <tr><th><td></td></th></tr>
          </tbody>
        </table>
       </div>
+    <button class="btn btn-danger" style="float:right;">購入する</button>
     </div>
   </div>
   <div class="col-1">

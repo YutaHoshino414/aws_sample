@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_041655) do
+ActiveRecord::Schema.define(version: 2021_02_12_011955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 2021_02_09_041655) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.integer "price"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_blogs_on_category_id"
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
@@ -77,6 +80,7 @@ ActiveRecord::Schema.define(version: 2021_02_09_041655) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "blogs", "categories"
   add_foreign_key "blogs", "users"
   add_foreign_key "comments", "blogs"
   add_foreign_key "comments", "users"

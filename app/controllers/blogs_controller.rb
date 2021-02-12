@@ -21,6 +21,10 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
+    # @parents = Category.all.where(ancestry: nil)
+    @children = Category.find_by(name:"レディース", ancestry: nil).children
+    @children2 = Category.find_by(name:"メンズ", ancestry: nil).children
+  # binding.pry
   end
 
   # GET /blogs/1/edit
@@ -77,6 +81,6 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:name, :content, images: [])
+      params.require(:blog).permit(:name, :category_id, :content, :price, images: [])
     end
 end

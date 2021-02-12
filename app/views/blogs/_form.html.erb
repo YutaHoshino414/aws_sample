@@ -1,31 +1,45 @@
-<%= form_with(model: blog, local: true) do |form| %>
-  <% if blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+<div>
+<div class="w-50 mx-auto">
+  <%= form_with(model: blog, local: true) do |form| %>
+    <% if blog.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+  
+        <ul>
+        <% blog.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class:"form-control" %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.text_area :content, class:"form-control" %>
+    </div>
+  
+    <div class="field">
+    <%= form.file_field :images, multiple: true %>
+    </div><br>
 
-      <ul>
-      <% blog.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="field">
+    レディース
+    <%= form.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' } %>
+    </div><br>
+  
+    <div class="field w-50">
+      <%= form.label :price %>
+      <%= form.text_field :price, class:"form-control" %>円
+    </div>
+
+    <div class="actions">
+      <%= form.submit '登録する', class:"btn btn-primary" %>
     </div>
   <% end %>
-
-  <div class="field w-50">
-    <%= form.label :name %>
-    <%= form.text_field :name, class:"form-control" %>
-  </div>
-
-  <div class="field w-50">
-    <%= form.label :content %>
-    <%= form.text_area :content, class:"form-control" %>
-  </div>
-
-  <div class="field">
-  <%= form.file_field :images, multiple: true %>
-  </div><br>
-
-  <div class="actions">
-    <%= form.submit '登録する', class:"btn btn-primary" %>
-  </div>
-<% end %>
+</div>
+<div>
