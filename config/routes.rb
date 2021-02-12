@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root "blogs#index"
   devise_for :users
   resources :users, only: [:index, :show]
@@ -6,4 +7,5 @@ Rails.application.routes.draw do
   resources :blogs do
     resources :comments
   end
+  resources :categories, only: [:index, :show]
 end

@@ -1,0 +1,10 @@
+<h2>Categories_<%= @category.id %><%= @category.name %>のページ</h2>
+<br>
+<% @category.blogs.each do |blog| %>
+  #<%= blog.id %>
+  <%= blog.name %>
+  <%= blog.content %>
+  <%= blog.created_at.strftime('%Y/%m/%d') %>
+  <%= blog.category.name %>
+  <%= blog.user.email %>
+<% end %>

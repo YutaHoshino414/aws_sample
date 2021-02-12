@@ -22,8 +22,12 @@
              
              <tr>
                <th>カテゴリー</th>
+               <%= link_to category_path(@blog.category_id) do %>
                <td><%= @blog.category.parent.name %>>
+               <% end %>
+               <%= link_to category_path(@blog.category_id) do %>
                <%= @blog.category.name %></td>
+               <% end %>
              </tr>
              <tr>
                <th>お気に入り</th>

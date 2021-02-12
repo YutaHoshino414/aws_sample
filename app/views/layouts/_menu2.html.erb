@@ -4,18 +4,24 @@
   <ul id="sample">
    <% @parents.each do |parent| %>
    <li>
-     <a><%= parent.name %></a>
+     <%= link_to category_path(parent.id) do %>
+       <%= parent.name %>
+     <% end %>
      <ul>
        <h3><%= parent.name %></h3>
        <% parent.children.each do |child| %>
        <li>
-           <a><%= child.name %></a>
+         <%= link_to category_path(child.id) do %>
+           <%= child.name %>
+         <% end %>
          <ul class="big">
            <h3><%= child.name %></h3>
            <% child.children.each do |grandchild| %>
            <li>
-             <a><%= grandchild.name %></a>
+             <%= link_to category_path(grandchild.id) do %>
+             <%= grandchild.name %>
              <% end %>
+           <% end %>
            </li>
          </ul>
          <% end %>
