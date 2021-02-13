@@ -66,3 +66,4 @@ gem 'jquery-rails'
 # gem 'devise-bootstrap-views', '~> 1.0'
 #
 gem 'ancestry'
+gem 'payjp'

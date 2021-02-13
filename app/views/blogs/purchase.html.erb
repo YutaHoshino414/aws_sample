@@ -1,0 +1,19 @@
+<h2>購入画面</h2><br>
+<h5><strong>**以下の内容で、購入を確定する。**</strong></h5><br>
+
+<div style="background-color:#fff;">
+  <%= form_with(model: @blog, local: true, url: pay_blog_path) do |form| %>
+  
+    <p>アイテム名:<%= @blog.name %></p>
+  
+    <p>アイテム詳細:<%= @blog.content %></p>
+    <p>価格:<%= @blog.price%></p>
+  
+    <script 
+      type="text/javascript" 
+      src="https://checkout.pay.jp" 
+      class="payjp-button" 
+        data-key="pk_test_401ce4da329e4e80e899e8dd">
+    </script>
+  <% end %><br>
+</div>

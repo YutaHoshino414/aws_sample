@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %w[ show edit update destroy ]
-
+  require 'payjp'
   # GET /blogs
   # GET /blogs.json
   def index
@@ -71,6 +71,24 @@ class BlogsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def purchase
+    @blog = Blog.find(params[:id])
+  end
+
+  def pay
+    @blog = Blog.find(params[:id])
+
+    Payjp.api_key = "sk_test_c50831c684c20a48dd29ef03"
+    Payjp::Charge.create(
+      :amount => @blog.price,
+      :card => params['payjp-token'],
+      :currency => 'jpy'
+    )
+    
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
